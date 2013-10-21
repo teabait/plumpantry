@@ -1,8 +1,12 @@
-class RecipessController < ApplicationController
+class RecipesController < ApplicationController
   def new
-    render :new
+    @recipe = Recipe.new
   end
 
   def show
+  end
+
+  def index
+    render :index
   end
 end
