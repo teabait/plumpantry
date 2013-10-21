@@ -1,1 +1,8 @@
 <h1>ALL RECIPES HERE</h1>
+
+<% Yummly.search('fall').each do |r| %>
+<h1>
+  <img width=130 src="<%= r.images[0].small_url %>"/> 
+</h1>
+
+<% end %>

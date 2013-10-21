@@ -38,6 +38,10 @@ gem 'yummly'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem 'pry'
+
+gem 'pry-debugger'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
