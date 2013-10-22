@@ -11,24 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022175300) do
+ActiveRecord::Schema.define(version: 20131022184410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "ingredients", force: true do |t|
     t.string "name", null: false
-  end
-
-  create_table "recipes", force: true do |t|
-    t.json     "yummly_object", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "recipes_users", force: true do |t|
-    t.integer "user_id",   null: false
-    t.integer "recipe_id", null: false
   end
 
   create_table "users", force: true do |t|
@@ -40,12 +29,5 @@ ActiveRecord::Schema.define(version: 20131022175300) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-
-  create_table "yummly_recipes", force: true do |t|
-    t.string   "yummly_id",   null: false
-    t.string   "yummly_name", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

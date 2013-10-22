@@ -1,4 +1,4 @@
 class YummlyRecipe < ActiveRecord::Base
-  validates :yummly_id, :recipe_name, presence: true
+  validates :yummly_id, :yummly_name, presence: true
 
 end
