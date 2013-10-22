@@ -4,10 +4,12 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @season = "fall"
+    @recipes = Recipe.all
     render :index
   end
 
   def show
+    @recipe = Recipe.find(params[:id])
+    render :show
   end
 end

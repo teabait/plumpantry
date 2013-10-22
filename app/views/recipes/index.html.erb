@@ -1,8 +1,9 @@
 <div class = "recipe-box">
-  <% Yummly.search(@season).map do |r| %>
+  <% @recipes.each do |r| %>
   <div class= "single-recipe">
-    <img width=130 src="<%= r.images[0].small_url %>"/> 
-    <p class="recipe-name"><%=r.recipe_name %></p>
+    <img class = "image-index" width=130 src="<%= r.image %>"/> 
+    <a class="recipe-name" href="/recipes/<%=r.id%>"><%=r.name %></a>
   </div>
     <% end %>
 </div>
+

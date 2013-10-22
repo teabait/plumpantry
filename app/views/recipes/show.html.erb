@@ -1,2 +1,5 @@
-
-  <%= @user %>
+<h2><%= @recipe.name %></h2>
+<img width=130 src="<%= @recipe.image %>"/> 
+<% @recipe.ingredients.each do |i| %>
+<p><%= i.name %> </p>
+<% end %>
