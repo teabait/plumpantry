@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PlumPantry</title>
-  <link rel="stylesheet" href="style.css"/>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+   <title>PlumPantry</title>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Rouge+Script|Arvo" %>
+  <%= stylesheet_link_tag "reset", "style" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>top bar with sign in stuff</h1>
-<%= yield %>
-
+  <div class="topbar">
+    <header>
+      <h1>plum <span>pantry</span></h1>
+    </header>
+      
+  </div>
+  <div class="wrapper">
+  <%= yield %>
+  </div>
 </body>
 </html>

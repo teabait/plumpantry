@@ -1,7 +1,7 @@
 # configure Yummly with your APP key and ID
 
 Yummly.configure do |config|
-  config.app_id = "c74f5216"
-  config.app_key = "2da3cbe5c3a5f5ab12c47de4e71f19a5"
+  config.app_id = "3624bf2f"
+  config.app_key = "ad4681a260cf01f056b78a9cef9a8726"
   config.use_ssl = true # Default is false
 end

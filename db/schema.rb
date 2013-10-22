@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021204901) do
+ActiveRecord::Schema.define(version: 20131022161556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,20 @@ ActiveRecord::Schema.define(version: 20131021204901) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",      null: false
+    t.string   "email",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name",       null: false
+    t.string   "name",            null: false
+    t.string   "password_digest", null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  create_table "yummly_recipes", force: true do |t|
+    t.string   "yummly_id",   null: false
+    t.string   "yummly_name", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

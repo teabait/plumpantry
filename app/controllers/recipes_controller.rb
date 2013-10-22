@@ -3,10 +3,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  def show
+  def index
+    @season = "fall"
+    render :index
   end
 
-  def index
-    render :index
+  def show
   end
 end
