@@ -3,9 +3,17 @@
 
 <h2>ingredients</h2>
 <ul>
-  <% @recipe.ingredients.each do |i| %>
+  <% @ingredients.each do |i| %>
   <li class = "ingredients"><%= link_to i.name, ingredient_path(i) %></li>
   <% end %>
 </ul>
 
 <h2>recipes with a similar ingredients list</h2>
+
+
+
+
+  <% @similar.each do |r|%>
+    <img class = "image-index" width=130 src="<%= r.image %>"/> 
+    <li><%= r.name %></li>
+    <% end %>
