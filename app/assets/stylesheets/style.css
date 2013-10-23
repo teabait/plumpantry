@@ -57,6 +57,20 @@ body {
 
 /* NAV */
 
+nav {
+  float: right;
+  margin: .3em 11% 0;
+  display: inline;
+}
+
+.nav-home {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  display: inline;
+  margin-left: 10px;
+}
+
 li {
   list-style-type: none;
   line-height: 1.2em;
@@ -123,4 +137,16 @@ a:hover {
 
 h1 a {
   color: rgba(255, 255, 255, 1);
+}
+
+a.heart {
+  margin: 1.5em .5em 1em 0;
+  float: right;
+  color: rgba(254, 153, 168, 1);
+}
+
+a.heart:hover {
+  transform:scale(1.2);
+  -moz-transform:scale(1.2); 
+  -webkit-transform:scale(1.2);
 }
