@@ -12,13 +12,7 @@
 <h2>recipes with a similar ingredients list</h2>
   <% @similar.each do |r|%>
     <%if r.name != @recipe.name %>
-      <div class= "single-recipe">
-          <img class = "image-index" width=130 src="<%= r.image %>"/> 
-          <p class = "recipe-name"><%= link_to r.name, recipe_path(r) %></p>
-          <% if logged_in? %>
-            <%= link_to 'favorite', favorite_recipe_path(r.id), :method => :post %>
-          <% end %>
-      </div>
+      <%= render '/recipes/single_recipe' %>
       <% end %>
     <% end %>
 </div>

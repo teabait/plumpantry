@@ -1,0 +1,10 @@
+  <% @recipes.each do |r| %>
+    <div class= "single-recipe">
+
+    <img class = "image-index" width=130 src="<%= r.image %>"/> 
+    <% if logged_in? %>
+      <%= link_to '♥', favorite_recipe_path(r.id), :method => :post, class: "heart" %>
+    <% end %>
+    <p class = "recipe-name"><%= link_to r.name, recipe_path(r) %></p>
+</div>
+    <% end %>

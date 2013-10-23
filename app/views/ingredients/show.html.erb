@@ -4,10 +4,7 @@
 <div class="recipe-box">
   <ul>
     <% @ingredient.recipes.each do |r| %>
-    <div class= "single-recipe">
-      <img class = "image-index" width=130 src="<%= r.image %>"/> 
-      <li class="recipe-name"><%= link_to r.name, recipe_path(r) %></li>
-    </div>
+    <%= render '/recipes/single_recipe' %>
   <% end %>
   </ul>
 </div>

@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @recipes = @user.recipes
     render :show
   end
 
