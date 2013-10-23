@@ -1,0 +1,13 @@
+
+<h1><%= @ingredient.name.downcase %></h1>
+<h2>Other recipes with <%= @ingredient.name %> </h2>
+<div class="recipe-box">
+  <ul>
+    <% @ingredient.recipes.each do |r| %>
+    <div class= "single-recipe">
+      <img class = "image-index" width=130 src="<%= r.image %>"/> 
+      <li class="recipe-name"><%= link_to r.name, recipe_path(r) %></li>
+    </div>
+  <% end %>
+  </ul>
+</div>
