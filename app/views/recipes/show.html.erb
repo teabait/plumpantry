@@ -1,13 +1,20 @@
 <div class = "recipe-box">
 <h1><%= @recipe.name%></h1>
 <img width=130 src="<%= @recipe.image %>"/> 
+<section class="ingredients-box">
+  <h2>ingredients</h2>
+  <ul>
+    <% @ingredients.each do |i| %>
+    <li class = "ingredients"><%= link_to i.name, ingredient_path(i) %></li>
+    <% end %>
+  </ul>
+</section>
 
-<h2>ingredients</h2>
-<ul>
-  <% @ingredients.each do |i| %>
-  <li class = "ingredients"><%= link_to i.name, ingredient_path(i) %></li>
+<p>
+  <% if logged_in? && @current_user.favorites.include?('@recipe.name') == false %>
+    <%= link_to '♥', favorite_recipe_path(@recipe.id), :method => :post, class: "giantheart" %>
   <% end %>
-</ul>
+</p>
 
 <h2>recipes with a similar ingredients list</h2>
   <% @similar.each do |r|%>

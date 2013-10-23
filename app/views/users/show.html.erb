@@ -1,12 +1,14 @@
-<h2>
-  <%= @user.name %>'s pantry items
-</h1>
  <% @recipes = @user.recipes %>
 
-<div class= "recipe-box">
+<div class= "side pantry">
+  <h2>
+  <%= @user.name %>'s pantry items
+</h1>
   <%= render '/recipes/single_recipe' %>
 </div>
 
+<div class= "side suggestions">
 <h2>
   suggested items for <%= @user.name %>
 </h2>
+</div>

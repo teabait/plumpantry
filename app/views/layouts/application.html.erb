@@ -13,11 +13,12 @@
       <h1><a href="/">plum <span>pantry</span></a></h1>
     </header>
     <nav>
-      <li class="nav-home"><a href="/users/new">sign up</a></li>
       <% if logged_in? == false %>
+        <li class="nav-home"><a href="/users/new">sign up</a></li>
         <li class="nav-home"><a href="/session/new">login</a></li>
       <% end %>
       <% if logged_in? %>
+        <%= link_to 'my pantry', user_path(@current_user), :method => :get, class: "nav-home" %>
         <%= link_to 'logout', session_path, :method => :delete, class: "nav-home" %>
       <% end %>
     </nav>     
