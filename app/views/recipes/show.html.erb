@@ -1,3 +1,4 @@
+<div class = "recipe-box">
 <h1><%= @recipe.name%></h1>
 <img width=130 src="<%= @recipe.image %>"/> 
 
@@ -9,13 +10,12 @@
 </ul>
 
 <h2>recipes with a similar ingredients list</h2>
-
-
-
-
   <% @similar.each do |r|%>
     <%if r.name != @recipe.name %>
-      <img class = "image-index" width=130 src="<%= r.image %>"/> 
-      <li><%= r.name %></li>
-        <% end %>
-  <% end %>
+      <div class= "single-recipe">
+          <img class = "image-index" width=130 src="<%= r.image %>"/> 
+          <p class = "recipe-name"><%= link_to r.name, recipe_path(r) %></p>
+      </div>
+      <% end %>
+    <% end %>
+</div>

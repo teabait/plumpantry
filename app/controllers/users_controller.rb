@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    render :show
   end
 
   def edit
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
 
   def authorized!
     unless @user.id == session[:user_id]
-      redirect_to user_path(session[:user_id])
+      redirect_to(recipes_path)
     end
   end
 end
