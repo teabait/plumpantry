@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action:current_user
+
   def new
     @recipe = Recipe.new
   end
@@ -26,7 +28,18 @@ class RecipesController < ApplicationController
       #find intersection of @r_ingredients to this recipe's ingredients
        (@r_ingredients & @ingredients_array).size >= 3
     end
-
     render :show
   end
+
+  def favorite
+    @recipe = Recipe.find_by(id:params[:id])
+    @current_user.recipes << @recipe
+    
+    if @recipe.persisted?
+      redirect_to user_path(current_user)
+    else
+      render :show
+    end
+  end
 end
+

@@ -1,3 +1,16 @@
-<h1>
-  <%= @user %>
+<h2>
+  <%= @user.name %>'s pantry items
 </h1>
+
+<div class= "recipe-box">
+  <% @user.recipes.each do |r| %>
+    <div class="single-recipe">
+      <img class = "image-index" width=130 src="<%= r.image %>"/> 
+      <p class = "recipe-name"><%= link_to r.name, recipe_path(r) %></p>
+    </div>
+  <% end %>
+</div>
+
+<h2>
+  suggested items for <%= @user.name %>
+</h2>
