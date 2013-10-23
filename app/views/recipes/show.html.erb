@@ -14,6 +14,8 @@
 
 
   <% @similar.each do |r|%>
-    <img class = "image-index" width=130 src="<%= r.image %>"/> 
-    <li><%= r.name %></li>
-    <% end %>
+    <%if r.name != @recipe.name %>
+      <img class = "image-index" width=130 src="<%= r.image %>"/> 
+      <li><%= r.name %></li>
+        <% end %>
+  <% end %>
