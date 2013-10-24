@@ -2,14 +2,14 @@
 
 <div class= "side pantry">
   <h2>
-  <%= @user.name %>'s pantry items
+  <%= @user.name.downcase %>'s pantry items
 </h1>
   <%= render '/recipes/single_recipe' %>
 </div>
 
 <div class= "side suggestions">
 <h2>
-  <%= @user.name %>'s grocery list
+  <%= @user.name.downcase %>'s grocery list
 </h2>
   <div class= "grocery_list">
     <ul>

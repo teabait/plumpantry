@@ -2,8 +2,9 @@
 <h1><%= @ingredient.name.downcase %></h1>
 <h2>Other recipes with <%= @ingredient.name %> </h2>
 <div class="recipe-box">
+
   <ul>
-    <% @ingredient.recipes.each do |r| %>
+    <% @ingredient.recipe)suggest.each do |r| %>
     <%= render '/recipes/single_recipe' %>
   <% end %>
   </ul>
