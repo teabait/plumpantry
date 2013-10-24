@@ -161,6 +161,10 @@ h1 span {
 
 }
 
+h1 span:hover {
+  color: rgba(255, 156, 33, 1);
+}
+
 h2 {
   font-family: 'Arvo', serif;
   font-size: 1em;
