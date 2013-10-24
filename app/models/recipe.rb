@@ -35,4 +35,8 @@ class Recipe < ActiveRecord::Base
     end
     sliced + new_end
   end
+
+  def ingredients_unique
+    self.ingredients.to_a.uniq!
+  end
 end
