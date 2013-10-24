@@ -1,28 +1,23 @@
 <div class = "recipe-box">
-<h3><%= @recipe.name%></h3>
-<img width=130 src="<%= @recipe.image %>"/> 
-<section class="ingredients-box">
-  <h2>ingredients</h2>
-  <ul>
-    <% @ingredients.each do |i| %>
-    <li class = "ingredients"><%= link_to i.name, ingredient_path(i) %></li>
+  <h3><%= @recipe.name%></h3>
+  <img width=130 src="<%= @recipe.image %>"/> 
+  <section class="ingredients-box">
+    <h2>ingredients</h2>
+    <ul>
+      <% @ingredients.each do |i| %>
+      <li class = "ingredients"><%= link_to i.name, ingredient_path(i) %></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <p>
+    <% unless !logged_in? || @current_user.favorites.include?(@recipe.name)%>
+      <%= link_to '♥', favorite_recipe_path(@recipe.id), :method => :post, class: "giantheart" %>
     <% end %>
-  </ul>
-</section>
+  </p>
 
-<p>
-  <% unless !logged_in? || @current_user.favorites.include?(@recipe.name)%>
-    <%= link_to '♥', favorite_recipe_path(@recipe.id), :method => :post, class: "giantheart" %>
+  <% unless @recipe.similar.nil? %>
+    <h2>recipes with a similar ingredients list</h2>
+        <%= render '/recipes/single_recipe' %>
   <% end %>
-</p>
-
-<% unless @recipe.similar.count == 1 %>
-  <h2>recipes with a similar ingredients list</h2>
-  <% @recipe.similar.each do |r|%>
-    <%if r.name != @recipe.name %>
-      <%= render '/recipes/single_recipe' %>
-    <% end %>
-  <% end %>
-<% end %>
-
 </div>
