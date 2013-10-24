@@ -11,7 +11,7 @@
 </section>
 
 <p>
-  <% if logged_in? && @current_user.favorites.include?('@recipe.name') == false %>
+  <% unless !logged_in? || @current_user.favorites.include?(@recipe.name)%>
     <%= link_to '♥', favorite_recipe_path(@recipe.id), :method => :post, class: "giantheart" %>
   <% end %>
 </p>

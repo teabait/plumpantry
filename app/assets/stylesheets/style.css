@@ -51,6 +51,8 @@ section {
 .pantry {
   float: left;
   margin-left: 10%;
+  height: 550px;
+  overflow: scroll;
 }
 
 .suggestions {
