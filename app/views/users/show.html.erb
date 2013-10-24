@@ -11,4 +11,11 @@
 <h2>
   <%= @user.name %>'s grocery list
 </h2>
+  <div class= "grocery_list">
+    <ul>
+    <% @user.grocery_list.each do |i|%>
+      <li class="ingredients"><%= i %></li>
+    <% end %>
+    </ul>
+  </div>
 </div>

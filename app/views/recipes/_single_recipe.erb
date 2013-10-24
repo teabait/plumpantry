@@ -2,12 +2,12 @@
     <div class= "single-recipe">
 
     <img class = "image-index" width=130 height=80 src="<%= r.image %>"/> 
-    <% if logged_in? %>
+    <% unless !logged_in? || current_user.favorites.include?(r.name)%>
       <%= link_to '♥', favorite_recipe_path(r.id), :method => :post, class: "heart" %>
     <% end %>
 
     <% if logged_in? && current_user.favorites.include?(r.name)%>
-      <%= link_to 'X', remove_recipe_path(r.id), :method => :remove, class: "heart" %>
+      <%= link_to '✕', remove_recipe_path(r.id), :method => :remove, class: "heart" %>
     <% end %>
     <p class = "recipe-name"><%= link_to r.name, recipe_path(r) %></p>
 </div>
