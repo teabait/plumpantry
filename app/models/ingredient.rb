@@ -6,7 +6,7 @@ class Ingredient < ActiveRecord::Base
       self.recipes.each do |r|
         suggested_recipes = []
         suggested_recipes << r
-        suggested_recipes.uniq!
+        return suggested_recipes.uniq!
       end
    end
 end
