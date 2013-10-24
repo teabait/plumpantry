@@ -16,9 +16,9 @@
   <% end %>
 </p>
 
-<% unless @similar.count == 1 %>
+<% unless @recipe.similar.count == 1 %>
   <h2>recipes with a similar ingredients list</h2>
-  <% @similar.each do |r|%>
+  <% @recipe.similar.each do |r|%>
     <%if r.name != @recipe.name %>
       <%= render '/recipes/single_recipe' %>
     <% end %>
