@@ -3,7 +3,7 @@
   <img width=300 class="large-image" src="<%= @recipe.large_image %>"/> 
   <section class="ingredients-box">
     <p>
-      <% unless !logged_in? || @current_user.recipes.include?(@recipe.name)%>
+      <% unless !logged_in? || current_user.recipes.include?(@recipe.name)%>
         <%= link_to '♥', favorite_recipe_path(@recipe.id), :method => :post, class: "giantheart" %>
       <% end %>
     </p>
