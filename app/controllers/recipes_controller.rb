@@ -41,5 +41,16 @@ class RecipesController < ApplicationController
       render :show
     end
   end
+
+  def remove
+    @recipe = Recipe.find_by(id:params[:id])
+    @current_user.recipes.delete(@recipe)
+    
+    if @recipe.persisted?
+      redirect_to user_path(current_user)
+    else
+      render :show
+    end
+  end
 end
 
