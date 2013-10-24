@@ -2,6 +2,11 @@
   <h3><%= @recipe.name%></h3>
   <img width=300 class="large-image" src="<%= @recipe.large_image %>"/> 
   <section class="ingredients-box">
+    <p>
+      <% unless !logged_in? || @current_user.favorites.include?(@recipe.name)%>
+        <%= link_to '♥', favorite_recipe_path(@recipe.id), :method => :post, class: "giantheart" %>
+        <% end %>
+    </p>
     <h2>ingredients</h2>
     <ul>
       <% @ingredients.each do |i| %>
@@ -9,11 +14,6 @@
       <% end %>
     </ul>
   </section>
-  <p>
-    <% unless !logged_in? || @current_user.favorites.include?(@recipe.name)%>
-      <%= link_to '♥', favorite_recipe_path(@recipe.id), :method => :post, class: "giantheart" %>
-    <% end %>
-  </p>
   <% unless @recipe.similar.nil? %>
     <h2>recipes with a similar ingredients list</h2>
         <%= render '/recipes/single_recipe' %>
