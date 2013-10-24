@@ -5,12 +5,12 @@
     <p>
       <% unless !logged_in? || @current_user.favorites.include?(@recipe.name)%>
         <%= link_to '♥', favorite_recipe_path(@recipe.id), :method => :post, class: "giantheart" %>
-        <% end %>
+      <% end %>
     </p>
     <h2>ingredients</h2>
     <ul>
       <% @ingredients.each do |i| %>
-      <li class = "ingredients"><%= link_to i.name, ingredient_path(i) %></li>
+        <li class = "ingredients"><%= link_to i.name, ingredient_path(i) %></li>
       <% end %>
     </ul>
   </section>

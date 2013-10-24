@@ -1,5 +1,5 @@
-  <% @recipes.each do |r| %>
-    <div class= "single-recipe">
+<% @recipes.each do |r| %>
+  <div class= "single-recipe">
 
     <img class = "image-index" width=130 height=80 src="<%= r.image %>"/> 
     <% unless !logged_in? || current_user.favorites.include?(r.name)%>
@@ -10,5 +10,5 @@
       <%= link_to '✕', remove_recipe_path(r.id), :method => :remove, class: "heart" %>
     <% end %>
     <p class = "recipe-name"><%= link_to r.name, recipe_path(r) %></p>
-</div>
-    <% end %>
+  </div>
+<% end %>
