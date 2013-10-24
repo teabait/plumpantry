@@ -6,10 +6,8 @@
   <ul>
     <% if @ingredient.recipe_suggest %>
       <% @ingredient.recipe_suggest.each do |r| %>
-        <%= render '/recipes/single_recipe' %>
       <% end %>
-    <% else %>
-      <%= render '/recipes/single_recipe' %>
     <% end %>
+    <%= render '/recipes/single_recipe' %>
   </ul>
 </div>
