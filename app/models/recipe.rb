@@ -37,6 +37,6 @@ class Recipe < ActiveRecord::Base
   end
 
   def ingredients_unique
-    self.ingredients.to_a.uniq!
+    self.ingredients.uniq!
   end
 end
