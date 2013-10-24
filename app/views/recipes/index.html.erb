@@ -1,3 +1,13 @@
+<% unless logged_in? %>
+      <div class="giant-box">
+        <h1>SIGN UP!</h1>
+        <%= render 'users/form' %>
+          <div class="top">
+            <h3>&mdash; or &mdash;</h3>
+            <%= link_to 'login', session_path, :method => :post, class: "login" %>
+          </div>
+      </div>
+    <% end %>
 <div class = "recipe-box">
     <%= render 'single_recipe' %>
 </div>

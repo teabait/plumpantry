@@ -1,3 +1,5 @@
+<div class="form">
+<% @user = User.new %>
 <% unless @user.errors.none? %>
   <% @user.errors.full_messages.each do |msg| %>
     <%= msg %>
@@ -19,3 +21,4 @@
 
   <%= f.submit  class: "submit"%>
 <% end %>
+</div>
