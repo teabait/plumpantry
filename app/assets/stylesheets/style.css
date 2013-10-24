@@ -197,12 +197,6 @@ h1 {
 
 h1 span {
   font-family: 'Rouge Script', cursive;
-  color: rgba(255,255,255,1);
-
-}
-
-h1 span:hover {
-  color: rgba(255, 156, 33, 1);
 }
 
 h2 {
@@ -253,6 +247,9 @@ a.heart:hover {
   -webkit-transform:scale(1.2);
 }
 
+h1 a:hover {
+  color: rgba(255, 156, 33, 1);
+}
 
 /* FORM */
 
