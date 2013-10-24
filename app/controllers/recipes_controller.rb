@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
 
-    @recipes = Recipe.all
+    @recipes = @recipe.similar
 
     render :show
   end
