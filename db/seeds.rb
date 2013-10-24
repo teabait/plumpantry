@@ -1,5 +1,5 @@
 
-Yummly.search('dessert', params={'maxResult'=>100 }).each do |recipe|
+Yummly.search('caramel', params={'maxResult'=>100 }).each do |recipe|
     
     @yummly_id = recipe.id
     @yummly_recipe_name = recipe.recipe_name
