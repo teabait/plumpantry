@@ -1,44 +1,35 @@
 # README
 
-### Overview
+#### purpose
 ****
+PlumPantry is an ingredients-based recipe suggestion app. Users select recipes they like and are presented with other recipes that share similar ingredients. This allows users to make more dishes while reusing ingredients, thus saving grocery trips and money. 
 
-PlumPantry is an ingredient-based food suggestions app. Recipes link to other recipes with similar ingredients lists, therefore giving users the maximum amount of dishes they can prepare with the minimum amount of ingredients needed for purchase.
-
-Users can add dishes to a favorites list, and are given a compiled grocery lists based on their favorite recipes' ingredients.
-
-### Purpose
+#### overview
 ****
+This is my first project for General Assembly's Web Development Immersive.
+It is the first project where I have:
 
-This is my first project at General Assembly for the Web Development Immersive Course. 
-This is my first project where I've :
+*	users
+*	authentification and authorization for users
+*	deployed a working rails app
 
-*	had users
-*	authorized and authenticated users
-*	deployed to heroku
-*	made a full working rails app
+I am most proud of:
 
-I am super proud of:
+*	my self styling—no frameworks!
+*	working around limitations of the Yummly API—example: they only give small image URLS and I created a method that takes that url and substitutes characters to get a large image.
+*	making different lists from the API interactive and meaningful.
+*	creating an app I'd like to use.
 
-*	 my self-styling—no frameworks used!
-*	 getting large image files for each recipe, despite Yummly not providing them. Made a bit of a hack for that.
-*	 Suggestive user sign in.
-*	 Features that only appear if users are authenticated.
-
-### Technology
+#### technology
 ****
-
-*	Yummly's API.
+*	Yummly API
 *	Yummly gem
-*	bcrypt-ruby 3.0.0
+*	bcrypt-ruby 3.0.0 
+*	rails 4.0.0
 *	rails_12factor
 
-### Contact
+#### contact
 ****
 
-*	tea ho 
-*	hello.teaho@gmail.com 
-
-
-
-	
+*	tea ho
+*	hello.teaho@gmail.com
