@@ -1,7 +1,7 @@
 <% @recipes.each do |r| %>
   <div class= "single-recipe">
 
-    <img class src="/recipes/#{r.id}" = "image-index" width=130 height=80 src="<%= r.image %>"/> 
+    <img src="/recipes/#{r.id}" class= "image-index" width=130 height=80 src="<%= r.image %>"/> 
     <% unless !logged_in? || current_user.favorites.include?(r.name)%>
       <%= link_to '♥', favorite_recipe_path(r.id), :method => :post, class: "heart" %>
     <% end %>
