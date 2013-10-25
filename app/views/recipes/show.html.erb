@@ -9,7 +9,7 @@
     </p>
     <h2>ingredients</h2>
     <ul>
-      <% @recipe.ingredients_unique.each do |i| %>
+      <% @recipe.ingredients.each do |i| %>
         <li class = "ingredients"><%= link_to i.name, ingredient_path(i) %></li>
       <% end %>
     </ul>
