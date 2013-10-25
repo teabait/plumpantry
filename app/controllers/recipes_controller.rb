@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
 
   def favorite
     @recipe = Recipe.find_by(id:params[:id])
-    @current_user.recipes << @recipe
+    current_user.recipes << @recipe
     
     if @recipe.persisted?
       redirect_to user_path(current_user)
