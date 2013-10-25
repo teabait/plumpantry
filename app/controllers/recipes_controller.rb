@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
 
   def remove
     @recipe = Recipe.find_by(id:params[:id])
-    @current_user.recipes.delete(@recipe)
+    current_user.recipes.delete(@recipe)
     
     if @recipe.persisted?
       redirect_to user_path(current_user)
